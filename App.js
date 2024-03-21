@@ -1,11 +1,34 @@
-// created h1 element: the empty object is used to pass attribute to the tags and 3rd param is the children (value passed to h1)
-const heading = React.createElement("h1", { id: "heading", xyz: "abc"}, "Hello from React");
+{
+  /* <div id="parent">
+    <div id="child">
+    <h1>I m h1 tag</h1>
+    <h2>I m h1 tag</h2>
+    </div>
+    <div id="child2">
+    <h1>I m h1 tag</h1>
+    <h2>I m h1 tag</h2>
+    </div>
+</div> */
+}
+
+// React element is object and the browser understands the html : so it converts
+const parent = React.createElement("div", { id: "parent" }, [
+  React.createElement("div", { id: "child" }, [
+    React.createElement("h1", {}, "I m h1 tag"),
+    React.createElement("h2", {}, "I m h2 tag"),
+  ]),
+  React.createElement("div", { id: "child2" }, [
+    React.createElement("h1", {}, "I m h1 tag"),
+    React.createElement("h2", {}, "I m h2 tag"),
+  ]),
+]);
+
 
 // basically the element formed is object
-console.log(heading);
+console.log(parent);
 
 // put h1 into React DOM by using ReactDOM
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 // render heading(element as an object) inside this root
-root.render(heading);
+root.render(parent);
