@@ -1,3 +1,7 @@
+// this react ois getting fetched from node modules react pkg
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 {
   /* <div id="parent">
     <div id="child">
