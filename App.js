@@ -30,5 +30,6 @@ console.log(parent);
 // put h1 into React DOM by using ReactDOM
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-// render heading(element as an object) inside this root
+// render (element as an object) inside this root: 
+// Note: If there are existing tags in root div, then they will get replaced/override by parent content
 root.render(parent);
