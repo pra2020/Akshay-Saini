@@ -1,39 +1,24 @@
-// this react ois getting fetched from node modules react pkg
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-{
-  /* <div id="parent">
-    <div id="child">
-    <h1>I m h1 tag</h1>
-    <h2>I m h1 tag</h2>
-    </div>
-    <div id="child2">
-    <h1>I m h1 tag</h1>
-    <h2>I m h1 tag</h2>
-    </div>
-</div> */
+const FunctionalComp = () => {
+  return <h1>Functional Comp</h1>
 }
 
-// React element is object and the browser understands the html : so it converts
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "I m h1 tag"),
-    React.createElement("h2", {}, "I m h2 tag"),
-  ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", {}, "I m h1 tag"),
-    React.createElement("h2", {}, "I m h2 tag"),
-  ]),
-]);
+const FuncComp = () => <h1>Func Comp</h1>
 
+// for mutli-line 
+const FuncComponent = () => (
+  <>
+  <div>Hello Func Comp</div>
+  <FuncComp/>
+  <FunctionalComp/>
+  </>
+  );
 
-// basically the element formed is object
-console.log(parent);
+// JSX - HTML like syntax
+// const jsxHeading = <h1 id="heading">Namaste React using JSX</h1>
 
-// put h1 into React DOM by using ReactDOM
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-// render (element as an object) inside this root: 
-// Note: If there are existing tags in root div, then they will get replaced/override by parent content
-root.render(parent);
+root.render(<FuncComponent/>);
